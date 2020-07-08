@@ -1,7 +1,7 @@
 {
   "name": "dev-to-sync",
   "description": "Sync your DEV account with a local folder",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Bram Borggreve @beeman",
   "bin": {
     "dev-to-sync": "./bin/run",
