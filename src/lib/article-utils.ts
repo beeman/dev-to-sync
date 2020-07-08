@@ -17,7 +17,14 @@ export async function findArticle(
 }
 
 export function defaultArticle(title: string): string {
-  return ['---', `title: ${title}`, 'published: false', '---'].join('\n');
+  return [
+    '---',
+    `title: '${title}'`,
+    'published: false',
+    '---',
+    '',
+    `## New article: ${title}`,
+  ].join('\n');
 }
 
 export async function createArticle(path: string, content: string) {
