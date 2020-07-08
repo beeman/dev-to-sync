@@ -16,7 +16,7 @@ export async function findArticle(
   return readFile(path, 'utf-8');
 }
 
-function defaultArticle(title: string): string {
+export function defaultArticle(title: string): string {
   return ['---', `title: ${title}`, 'published: false', '---'].join('\n');
 }
 

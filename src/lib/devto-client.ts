@@ -18,6 +18,14 @@ export class DevtoClient {
     );
   }
 
+  post(url: string, body: Record<string, string>) {
+    return fetch(this.baseUrl + url, {
+      body: JSON.stringify(body),
+      headers: this.headers,
+      method: 'POST',
+    }).then((res) => res.json());
+  }
+
   put(url: string, body: Record<string, string>) {
     return fetch(this.baseUrl + url, {
       body: JSON.stringify(body),
@@ -26,7 +34,19 @@ export class DevtoClient {
     }).then((res) => res.json());
   }
 
-  async getAccountArticles(): Promise<any[]> {
+  async createArticle(title: string, content: string): Promise<any> {
+    const result = await this.post(`/articles`, {
+      title,
+      body_markdown: content,
+    });
+
+    if (!result) {
+      throw new Error('Error creating article');
+    }
+    return result;
+  }
+
+  async getArticles(): Promise<any[]> {
     const result = await this.get('/articles/me/all');
 
     if (!result) {
@@ -35,7 +55,7 @@ export class DevtoClient {
     return result;
   }
 
-  async updateAccountArticle(id: number, content: string): Promise<any> {
+  async updateArticle(id: number, content: string): Promise<any> {
     const result = await this.put(`/articles/${id}`, {
       body_markdown: content,
     });

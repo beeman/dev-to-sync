@@ -11,15 +11,14 @@ This tool is inspired by (and uses code) from [dev-to-git](https://github.com/ma
 [![License](https://img.shields.io/npm/l/dev-to-sync.svg)](https://github.com/beeman/dev-to-sync/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [dev-to-sync](#dev-to-sync)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g dev-to-sync
 $ dev-to-sync COMMAND
@@ -31,16 +30,33 @@ USAGE
   $ dev-to-sync COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
+* [`dev-to-sync create [FILE]`](#dev-to-sync-create-file)
+* [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
+* [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
+* [`dev-to-sync list`](#dev-to-sync-list)
+* [`dev-to-sync pull [INDEX]`](#dev-to-sync-pull-index)
+* [`dev-to-sync push [INDEX]`](#dev-to-sync-push-index)
 
-- [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
-- [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
-- [`dev-to-sync push [FILE]`](#dev-to-sync-push-file)
+## `dev-to-sync create [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ dev-to-sync create [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/create.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/create.ts)_
 
 ## `dev-to-sync hello [FILE]`
 
@@ -79,20 +95,42 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 
-## `dev-to-sync push [FILE]`
+## `dev-to-sync list`
 
-describe the command here
+List articles in a DEV account
 
 ```
 USAGE
-  $ dev-to-sync push [FILE]
+  $ dev-to-sync list
+```
+
+_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/list.ts)_
+
+## `dev-to-sync pull [INDEX]`
+
+Pull articles from the DEV api and save them in a local path.
+
+```
+USAGE
+  $ dev-to-sync pull [INDEX]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  --dir=dir  [default: posts] Name of the directory the articles will be stored in
+```
+
+_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/pull.ts)_
+
+## `dev-to-sync push [INDEX]`
+
+Read articles from a local path and push to DEV.
+
+```
+USAGE
+  $ dev-to-sync push [INDEX]
+
+OPTIONS
+  -t, --timeout=timeout  [default: 500] Timeout in milliseconds between calls to DEV api
 ```
 
 _See code: [src/commands/push.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/push.ts)_
-
 <!-- commandsstop -->

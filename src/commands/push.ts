@@ -26,7 +26,7 @@ export default class Push extends Command {
     const indexPath = args.index || join('./dev-to-articles.json');
     const index = await getIndex(indexPath);
 
-    const articles = await client.getAccountArticles();
+    const articles = await client.getArticles();
 
     const indexed = index.map((entry) => {
       const path = entry.path || entry.relativePathToArticle || '';
@@ -53,7 +53,7 @@ export default class Push extends Command {
       let i = 0;
       for (const entry of changes) {
         i++;
-        const res = await client.updateAccountArticle(entry.id, entry.content);
+        const res = await client.updateArticle(entry.id, entry.content);
         if (!res) {
           throw new Error('Something went wrong');
         }

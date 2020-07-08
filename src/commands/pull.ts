@@ -14,15 +14,17 @@ export default class Pull extends Command {
     }),
   };
 
-  static args = [{ name: 'index', required: false }];
+  static args = [
+    { name: 'index', required: false, default: './dev-to-articles.json' },
+  ];
 
   async run() {
     const { args, flags } = this.parse(Pull);
 
-    const indexPath = args.index || join('./dev-to-articles.json');
+    const indexPath = args.index;
     const dir = flags.dir;
 
-    const articles = await client.getAccountArticles();
+    const articles = await client.getArticles();
 
     for (const article of articles) {
       await upsertArticle(indexPath, dir, article);
