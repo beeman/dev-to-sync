@@ -1,6 +1,7 @@
 import { Command, flags } from '@oclif/command';
 import { join } from 'path';
-import { client, upsertArticle } from '../lib/utils';
+import { upsertArticle } from '../lib/article-utils';
+import { client } from '../lib/utils';
 
 export default class Pull extends Command {
   static description =
