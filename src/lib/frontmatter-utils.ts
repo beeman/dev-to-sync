@@ -8,6 +8,7 @@ interface ArticleFrontMatter {
 export function extractDataFromFrontMatter(
   content: string
 ): ArticleFrontMatter {
+  // @ts-ignore
   const frontMatter = extractFrontMatter<ArticleFrontMatter>(content);
 
   if (
