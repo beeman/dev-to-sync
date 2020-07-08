@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "author": "Bram Borggreve @beeman",
   "bin": {
-    "dev-to-sync": "./bin/run"
+    "dev-to-sync": "./bin/run",
+    "dts": "./bin/run"
   },
   "bugs": "https://github.com/beeman/dev-to-sync/issues",
   "dependencies": {
