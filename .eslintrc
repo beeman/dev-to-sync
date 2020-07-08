@@ -4,6 +4,7 @@
     "oclif-typescript"
   ],
   "rules": {
+    "no-await-in-loop": "off",
     "no-console": "off",
     "semi": "off"
   }
