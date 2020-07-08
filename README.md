@@ -20,7 +20,7 @@ $ npm install -g dev-to-sync
 $ dev-to-sync COMMAND
 running command...
 $ dev-to-sync (-v|--version|version)
-dev-to-sync/0.0.0 darwin-x64 node-v12.18.1
+dev-to-sync/0.1.0 darwin-x64 node-v12.18.1
 $ dev-to-sync --help [COMMAND]
 USAGE
   $ dev-to-sync COMMAND
@@ -32,7 +32,7 @@ USAGE
 * [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
 * [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
 * [`dev-to-sync list`](#dev-to-sync-list)
-* [`dev-to-sync pull [FILE]`](#dev-to-sync-pull-file)
+* [`dev-to-sync pull [INDEX]`](#dev-to-sync-pull-index)
 
 ## `dev-to-sync hello [FILE]`
 
@@ -52,7 +52,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/beeman/dev-to-sync/blob/v0.1.0/src/commands/hello.ts)_
 
 ## `dev-to-sync help [COMMAND]`
 
@@ -80,21 +80,19 @@ USAGE
   $ dev-to-sync list
 ```
 
-_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.1.0/src/commands/list.ts)_
 
-## `dev-to-sync pull [FILE]`
+## `dev-to-sync pull [INDEX]`
 
-describe the command here
+Pull articles from the DEV api and save them in a local path.
 
 ```
 USAGE
-  $ dev-to-sync pull [FILE]
+  $ dev-to-sync pull [INDEX]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  --dir=dir  [default: posts] Name of the directory the articles will be stored in
 ```
 
-_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/pull.ts)_
+_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.1.0/src/commands/pull.ts)_
 <!-- commandsstop -->
