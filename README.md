@@ -31,6 +31,7 @@ USAGE
 <!-- commands -->
 * [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
 * [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
+* [`dev-to-sync list [FILE]`](#dev-to-sync-list-file)
 
 ## `dev-to-sync hello [FILE]`
 
@@ -68,4 +69,20 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+
+## `dev-to-sync list [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ dev-to-sync list [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/list.ts)_
 <!-- commandsstop -->
