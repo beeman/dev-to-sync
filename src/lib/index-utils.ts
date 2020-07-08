@@ -2,12 +2,14 @@ import { pathExists, readJSON, writeJSON } from 'fs-extra';
 
 interface IndexEntry {
   id: number;
-  path: string;
+  path?: string;
+  relativePathToArticle?: string;
 }
 
 function createEmptyIndex(path: string) {
   return writeJSON(path, []);
 }
+
 function readIndex(path: string): Promise<IndexEntry[]> {
   return readJSON(path);
 }

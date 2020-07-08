@@ -8,11 +8,12 @@ export async function findArticle(
 ): Promise<boolean | string> {
   const index = await getIndex(indexPath);
   const found = index.find((item) => item.id === articleId);
+  const path = found ? found.path || found.relativePathToArticle : null;
 
-  if (!found || !(await pathExists(found.path))) {
+  if (!path || !(await pathExists(path))) {
     return false;
   }
-  return readFile(found.path, 'utf-8');
+  return readFile(path, 'utf-8');
 }
 
 function defaultArticle(title: string): string {
