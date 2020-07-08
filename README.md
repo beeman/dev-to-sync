@@ -24,7 +24,7 @@ $ npm install -g dev-to-sync
 $ dev-to-sync COMMAND
 running command...
 $ dev-to-sync (-v|--version|version)
-dev-to-sync/0.4.0 darwin-x64 node-v12.18.1
+dev-to-sync/0.4.1 darwin-x64 node-v12.18.1
 $ dev-to-sync --help [COMMAND]
 USAGE
   $ dev-to-sync COMMAND
@@ -56,7 +56,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.1/src/commands/hello.ts)_
 
 ## `dev-to-sync help [COMMAND]`
 
