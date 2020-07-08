@@ -15,7 +15,7 @@ export class DevtoClient {
     );
   }
 
-  async getAccountArticles() {
+  async getAccountArticles(): Promise<any[]> {
     const result = await this.get('/articles/me/all');
 
     if (!result) {

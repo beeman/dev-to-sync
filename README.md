@@ -31,7 +31,8 @@ USAGE
 <!-- commands -->
 * [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
 * [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
-* [`dev-to-sync list [FILE]`](#dev-to-sync-list-file)
+* [`dev-to-sync list`](#dev-to-sync-list)
+* [`dev-to-sync pull [FILE]`](#dev-to-sync-pull-file)
 
 ## `dev-to-sync hello [FILE]`
 
@@ -70,13 +71,24 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 
-## `dev-to-sync list [FILE]`
+## `dev-to-sync list`
+
+List articles in a DEV account
+
+```
+USAGE
+  $ dev-to-sync list
+```
+
+_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/list.ts)_
+
+## `dev-to-sync pull [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ dev-to-sync list [FILE]
+  $ dev-to-sync pull [FILE]
 
 OPTIONS
   -f, --force
@@ -84,5 +96,5 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/list.ts)_
+_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.0.0/src/commands/pull.ts)_
 <!-- commandsstop -->
