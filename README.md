@@ -1,7 +1,8 @@
-dev-to-sync
-===========
+# dev-to-sync
 
-Sync your DEV account with a local folder
+Two-way sync of your DEV account with a local folder.
+
+This tool is inspired by (and uses code) from [dev-to-git](https://github.com/maxime1992/dev-to-git), which implements one-way local -> DEV sync.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/dev-to-sync.svg)](https://npmjs.org/package/dev-to-sync)
@@ -10,11 +11,15 @@ Sync your DEV account with a local folder
 [![License](https://img.shields.io/npm/l/dev-to-sync.svg)](https://github.com/beeman/dev-to-sync/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g dev-to-sync
 $ dev-to-sync COMMAND
@@ -26,13 +31,16 @@ USAGE
   $ dev-to-sync COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
-* [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
-* [`dev-to-sync list`](#dev-to-sync-list)
-* [`dev-to-sync pull [INDEX]`](#dev-to-sync-pull-index)
+
+- [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
+- [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
+- [`dev-to-sync push [FILE]`](#dev-to-sync-push-file)
 
 ## `dev-to-sync hello [FILE]`
 
@@ -71,28 +79,20 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 
-## `dev-to-sync list`
+## `dev-to-sync push [FILE]`
 
-List articles in a DEV account
-
-```
-USAGE
-  $ dev-to-sync list
-```
-
-_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/list.ts)_
-
-## `dev-to-sync pull [INDEX]`
-
-Pull articles from the DEV api and save them in a local path.
+describe the command here
 
 ```
 USAGE
-  $ dev-to-sync pull [INDEX]
+  $ dev-to-sync push [FILE]
 
 OPTIONS
-  --dir=dir  [default: posts] Name of the directory the articles will be stored in
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
 ```
 
-_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/pull.ts)_
+_See code: [src/commands/push.ts](https://github.com/beeman/dev-to-sync/blob/v0.3.0/src/commands/push.ts)_
+
 <!-- commandsstop -->
