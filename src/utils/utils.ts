@@ -27,3 +27,6 @@ export async function cacheUrls(urls: string[], cachePath: string) {
   );
   writeJSONSync(cachePath, cache, { spaces: 2 });
 }
+
+export const sleep = (ms = 1000) =>
+  new Promise((resolve) => setTimeout(resolve, ms));

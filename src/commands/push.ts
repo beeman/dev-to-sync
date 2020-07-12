@@ -1,11 +1,12 @@
-import { Command, flags } from '@oclif/command';
+import { flags } from '@oclif/command';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { validateFrontMatter } from '../lib/frontmatter-utils';
 import { getIndex } from '../lib/index-utils';
-import { client, sleep } from '../lib/utils';
+import { BaseCommand } from '../utils/base-command';
+import { sleep } from '../utils/utils';
 
-export default class Push extends Command {
+export default class Push extends BaseCommand {
   static args = [{ name: 'index', required: false }];
 
   static description = 'Read articles from a local path and push to DEV.';
@@ -20,13 +21,17 @@ export default class Push extends Command {
   };
 
   async run() {
+    if (!this.client) {
+      throw new Error(`Error initializing client`);
+    }
+
     const { args, flags } = this.parse(Push);
 
     const timeout = flags.timeout;
     const indexPath = args.index || join('./dev-to-articles.json');
     const index = await getIndex(indexPath);
 
-    const articles = await client.getArticles();
+    const articles = await this.client.getArticles();
 
     const indexed = index.map((entry) => {
       const path = entry.path || entry.relativePathToArticle || '';
@@ -53,7 +58,7 @@ export default class Push extends Command {
       let i = 0;
       for (const entry of changes) {
         i++;
-        const res = await client.updateArticle(entry.id, entry.content);
+        const res = await this.client.updateArticle(entry.id, entry.content);
         if (!res) {
           throw new Error('Something went wrong');
         }
