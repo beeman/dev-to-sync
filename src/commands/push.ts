@@ -41,7 +41,7 @@ export default class Push extends Command {
       .filter((entry) => {
         const remote = articles.find((article) => article.id === entry.id);
 
-        return remote.body_markdown !== entry.content;
+        return remote?.body_markdown !== entry.content;
       })
       .filter((entry) => {
         const valid = validateFrontMatter(entry.content);

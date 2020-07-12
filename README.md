@@ -35,12 +35,93 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`dev-to-sync config:delete`](#dev-to-sync-configdelete)
+* [`dev-to-sync config:edit`](#dev-to-sync-configedit)
+* [`dev-to-sync config:get KEY`](#dev-to-sync-configget-key)
+* [`dev-to-sync config:list [FILE]`](#dev-to-sync-configlist-file)
+* [`dev-to-sync config:set KEY VALUE`](#dev-to-sync-configset-key-value)
 * [`dev-to-sync create TITLE`](#dev-to-sync-create-title)
 * [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
 * [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
 * [`dev-to-sync list`](#dev-to-sync-list)
 * [`dev-to-sync pull [INDEX]`](#dev-to-sync-pull-index)
 * [`dev-to-sync push [INDEX]`](#dev-to-sync-push-index)
+
+## `dev-to-sync config:delete`
+
+Delete the config file
+
+```
+USAGE
+  $ dev-to-sync config:delete
+
+OPTIONS
+  -g, --global  (required) Global config
+  -h, --help    show CLI help
+```
+
+_See code: [src/commands/config/delete.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/delete.ts)_
+
+## `dev-to-sync config:edit`
+
+Edit the config file
+
+```
+USAGE
+  $ dev-to-sync config:edit
+
+OPTIONS
+  -g, --global  (required) Global config
+  -h, --help    show CLI help
+```
+
+_See code: [src/commands/config/edit.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/edit.ts)_
+
+## `dev-to-sync config:get KEY`
+
+describe the command here
+
+```
+USAGE
+  $ dev-to-sync config:get KEY
+
+OPTIONS
+  -g, --global  (required) Global config
+  -h, --help    show CLI help
+```
+
+_See code: [src/commands/config/get.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/get.ts)_
+
+## `dev-to-sync config:list [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ dev-to-sync config:list [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/config/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/list.ts)_
+
+## `dev-to-sync config:set KEY VALUE`
+
+describe the command here
+
+```
+USAGE
+  $ dev-to-sync config:set KEY VALUE
+
+OPTIONS
+  -g, --global  (required) Global config
+  -h, --help    show CLI help
+```
+
+_See code: [src/commands/config/set.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/set.ts)_
 
 ## `dev-to-sync create TITLE`
 
