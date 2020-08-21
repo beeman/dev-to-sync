@@ -24,7 +24,7 @@ $ npm install -g dev-to-sync
 $ dev-to-sync COMMAND
 running command...
 $ dev-to-sync (-v|--version|version)
-dev-to-sync/0.4.2 darwin-x64 node-v12.18.1
+dev-to-sync/0.5.0 darwin-x64 node-v12.18.2
 $ dev-to-sync --help [COMMAND]
 USAGE
   $ dev-to-sync COMMAND
@@ -38,12 +38,12 @@ USAGE
 * [`dev-to-sync config:delete`](#dev-to-sync-configdelete)
 * [`dev-to-sync config:edit`](#dev-to-sync-configedit)
 * [`dev-to-sync config:get KEY`](#dev-to-sync-configget-key)
-* [`dev-to-sync config:list [FILE]`](#dev-to-sync-configlist-file)
+* [`dev-to-sync config:list`](#dev-to-sync-configlist)
 * [`dev-to-sync config:set KEY VALUE`](#dev-to-sync-configset-key-value)
 * [`dev-to-sync create TITLE`](#dev-to-sync-create-title)
 * [`dev-to-sync hello [FILE]`](#dev-to-sync-hello-file)
 * [`dev-to-sync help [COMMAND]`](#dev-to-sync-help-command)
-* [`dev-to-sync list`](#dev-to-sync-list)
+* [`dev-to-sync list [INDEX]`](#dev-to-sync-list-index)
 * [`dev-to-sync pull [INDEX]`](#dev-to-sync-pull-index)
 * [`dev-to-sync push [INDEX]`](#dev-to-sync-push-index)
 
@@ -60,7 +60,7 @@ OPTIONS
   -h, --help    show CLI help
 ```
 
-_See code: [src/commands/config/delete.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/delete.ts)_
+_See code: [src/commands/config/delete.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/config/delete.ts)_
 
 ## `dev-to-sync config:edit`
 
@@ -75,11 +75,11 @@ OPTIONS
   -h, --help    show CLI help
 ```
 
-_See code: [src/commands/config/edit.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/edit.ts)_
+_See code: [src/commands/config/edit.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/config/edit.ts)_
 
 ## `dev-to-sync config:get KEY`
 
-describe the command here
+Retrieve value from app config
 
 ```
 USAGE
@@ -90,27 +90,26 @@ OPTIONS
   -h, --help    show CLI help
 ```
 
-_See code: [src/commands/config/get.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/get.ts)_
+_See code: [src/commands/config/get.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/config/get.ts)_
 
-## `dev-to-sync config:list [FILE]`
+## `dev-to-sync config:list`
 
-describe the command here
+List app config
 
 ```
 USAGE
-  $ dev-to-sync config:list [FILE]
+  $ dev-to-sync config:list
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -g, --global  (required) Global config
+  -h, --help    show CLI help
 ```
 
-_See code: [src/commands/config/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/list.ts)_
+_See code: [src/commands/config/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/config/list.ts)_
 
 ## `dev-to-sync config:set KEY VALUE`
 
-describe the command here
+Store value in app config
 
 ```
 USAGE
@@ -121,7 +120,7 @@ OPTIONS
   -h, --help    show CLI help
 ```
 
-_See code: [src/commands/config/set.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/config/set.ts)_
+_See code: [src/commands/config/set.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/config/set.ts)_
 
 ## `dev-to-sync create TITLE`
 
@@ -132,7 +131,7 @@ USAGE
   $ dev-to-sync create TITLE
 ```
 
-_See code: [src/commands/create.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/create.ts)_
+_See code: [src/commands/create.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/create.ts)_
 
 ## `dev-to-sync hello [FILE]`
 
@@ -152,7 +151,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/hello.ts)_
 
 ## `dev-to-sync help [COMMAND]`
 
@@ -171,16 +170,16 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 
-## `dev-to-sync list`
+## `dev-to-sync list [INDEX]`
 
 List articles in a DEV account
 
 ```
 USAGE
-  $ dev-to-sync list
+  $ dev-to-sync list [INDEX]
 ```
 
-_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/list.ts)_
 
 ## `dev-to-sync pull [INDEX]`
 
@@ -194,7 +193,7 @@ OPTIONS
   --dir=dir  [default: posts] Name of the directory the articles will be stored in
 ```
 
-_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/pull.ts)_
+_See code: [src/commands/pull.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/pull.ts)_
 
 ## `dev-to-sync push [INDEX]`
 
@@ -208,5 +207,5 @@ OPTIONS
   -t, --timeout=timeout  [default: 500] Timeout in milliseconds between calls to DEV api
 ```
 
-_See code: [src/commands/push.ts](https://github.com/beeman/dev-to-sync/blob/v0.4.2/src/commands/push.ts)_
+_See code: [src/commands/push.ts](https://github.com/beeman/dev-to-sync/blob/v0.5.0/src/commands/push.ts)_
 <!-- commandsstop -->

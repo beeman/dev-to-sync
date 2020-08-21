@@ -10,7 +10,7 @@ export const {
   yellowBright,
   magentaBright,
   gray,
-} = chalk;
+} = chalk.default;
 
 const info = (label = 'DEV-TO-SYNC'): string =>
   inverse(magentaBright(bold(` ${label} `)));
