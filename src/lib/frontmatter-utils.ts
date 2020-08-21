@@ -1,8 +1,12 @@
 import * as extractFrontMatter from 'front-matter';
 
-interface ArticleFrontMatter {
+export interface ArticleFrontMatter {
   title: string;
   published: boolean;
+  description?: string;
+  tags?: string;
+  canonical_url?: string;
+  cover_image?: string;
 }
 
 export function extractDataFromFrontMatter(

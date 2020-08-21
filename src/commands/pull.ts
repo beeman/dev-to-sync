@@ -1,8 +1,13 @@
 import { flags } from '@oclif/command';
 import { upsertArticle } from '../lib/article-utils';
+import { DEFAULT_ARTICLE_INDEX_PATH } from '../lib/config/config';
 import { BaseCommand } from '../utils/base-command';
 
 export default class Pull extends BaseCommand {
+  static args = [
+    { name: 'index', required: false, default: DEFAULT_ARTICLE_INDEX_PATH },
+  ];
+
   static description =
     'Pull articles from the DEV api and save them in a local path.';
 
@@ -12,10 +17,6 @@ export default class Pull extends BaseCommand {
       default: 'posts',
     }),
   };
-
-  static args = [
-    { name: 'index', required: false, default: './dev-to-articles.json' },
-  ];
 
   async run() {
     if (!this.client) {

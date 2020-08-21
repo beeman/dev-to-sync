@@ -10,6 +10,8 @@ import {
   updateConfigFile,
 } from './utils/config-utils';
 
+export const DEFAULT_ARTICLE_INDEX_PATH = './dev-to-articles.json';
+
 export interface EditConfigParamOptions {
   config: IConfig;
   global: boolean;

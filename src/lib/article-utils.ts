@@ -1,5 +1,9 @@
 import { ensureDir, pathExists, readFile, writeFile } from 'fs-extra';
 import { basename, dirname, join } from 'path';
+import {
+  ArticleFrontMatter,
+  extractDataFromFrontMatter,
+} from './frontmatter-utils';
 import { addToIndex, getIndex } from './index-utils';
 
 export async function findArticle(
@@ -52,6 +56,9 @@ export async function upsertArticle(
   const articleContent = article.body_markdown;
   const articleFilename = `${article.slug}.md`;
   const articlePath = join(articleDir, articleId.toString(), articleFilename);
+  const frontMatter: ArticleFrontMatter = extractDataFromFrontMatter(
+    articleContent
+  );
 
   const found = await findArticle(indexPath, articleId);
 
